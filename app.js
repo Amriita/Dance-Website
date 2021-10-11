@@ -4,6 +4,7 @@ const fs = require("fs");
 const bodyparser = require("body-parser");    //If we want this thing to be achieved with the help of express
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/contactDance', {useNewUrlParser: true});
+const port = process.env.PORT || 3000;
 const app = express();
 
 //Define Mongoose Schema
@@ -45,6 +46,6 @@ app.post('/contact', (req, res)=>{
 })
 
 // START THE SERVER
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log(`The application started successfully on port ${3000}`);
 });
